@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% comment "" %}
+{% block title %}
+Attendance Manager
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-2">Welcome to LNCT Attendance Manager!</h1>
+<h4 class="text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
+
+<form method="POST" class="form text-center">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">Analyse</button>
+</form> 
+{% endblock %} {% endcomment %}
+
+
+
+{% comment %} ------------------------------------------------------------- {% endcomment %}
+
+{% comment %} {% block title %}
+Attendance Manager
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 text-primary text-center mb-3">Welcome to LNCT Attendance Manager!</h1>
+    <h4 class="text-muted text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
+
+    <form method="POST" class="form text-center">
+        {% csrf_token %}
+        
+        <!-- Create a row with smaller column sizes -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="total_classes" class="form-label fs-6">Total No. of Classes</label>
+                    {{ form.total_classes }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="attended_classes" class="form-label fs-6">Present Classes</label>
+                    {{ form.attended_classes }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="holiday_classes" class="form-label fs-6">No. of Holidays</label>
+                    {{ form.holiday_classes }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Centered submit button with Bootstrap class -->
+        <div class="text-center">
+            <button class="btn btn-warning btn-sm" type="submit">Analyse</button>
+        </div>
+    </form>
+</div>
+{% endblock %}   {% endcomment %}
+
+{% comment %} -------------------------------------------------------------------------- {% endcomment %}
+
+{% comment %} {% block title %}
+Attendance Manager
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 text-primary text-center mb-3">Welcome to LNCT Attendance Manager!</h1>
+    <h4 class="text-muted text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
+
+    <form method="POST" class="form text-center" id="attendanceForm">
+        {% csrf_token %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="total_classes" class="form-label fs-6">Total No. of Classes</label>
+                    {{ form.total_classes }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="attended_classes" class="form-label fs-6">Present Classes</label>
+                    {{ form.attended_classes }}
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="mb-3">
+                    <label for="holiday_classes" class="form-label fs-6">No. of Holidays</label>
+                    {{ form.holiday_classes }}
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning btn-sm" type="submit">Analyse</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+{% block title %} Attendance Manager {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 text-primary text-center mb-3">Welcome to LNCT Attendance Manager!</h1>
+    <h4 class="text-muted text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
+
+    <form method="POST" class="form text-center" id="attendanceForm">
+        {% csrf_token %}
+        
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="total_classes" class="form-label fs-6">Total No. of Classes</label>
+                    {{ form.total_classes }}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="attended_classes" class="form-label fs-6">Present Classes</label>
+                    {{ form.attended_classes }}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="holiday_classes" class="form-label fs-6">No. of Future Holidays</label>
+                    {{ form.holiday_classes }}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="classes_per_day" class="form-label fs-6">Classes Per Day</label>
+                    {{ form.classes_per_day }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Configure Section -->
+        <div id="configureContainer" style="display: none;" class="mb-3">
+            <button type="button" class="btn btn-secondary" id="configureBtn">
+                Configure Skipped Classes
+            </button>
+        </div>
+
+        <!-- Daily Configuration Form -->
+        <div id="dailyConfig" style="display: none;" class="mb-4">
+            <div class="mb-3">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" id="selectAll">All Classes Skipped</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" id="clearAll">No Classes Skipped</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" id="defaultAll">Reset</button>
+                </div>
+            </div>
+            <p class="text-muted small mb-3">Select number of classes skipped for each day</p>
+            <div id="dayInputs" class="row justify-content-center"></div>
+        </div>
+
+        {{ form.daily_classes }}
+        
+        <button class="btn btn-warning btn-sm mt-3 mb-5" type="submit">Analyse</button>
+    </form>
+
+    {% if form.errors %}
+    <div class="alert alert-danger mt-3">
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const holidayInput = document.getElementById('holidayInput');
+    const configureContainer = document.getElementById('configureContainer');
+    const configureBtn = document.getElementById('configureBtn');
+    const dailyConfig = document.getElementById('dailyConfig');
+    const dayInputs = document.getElementById('dayInputs');
+    const dailyClassesData = document.getElementById('dailyClassesData');
+    const defaultClassesInput = document.getElementById('classesPerDay');
+    const selectAllBtn = document.getElementById('selectAll');
+    const clearAllBtn = document.getElementById('clearAll');
+    const defaultAllBtn = document.getElementById('defaultAll');
+
+    // Listen for changes in classes per day
+    defaultClassesInput.addEventListener('change', function() {
+        if (dailyConfig.style.display === 'block') {
+            generateDayInputs();
+        }
+    });
+
+    // Show/hide configure button based on holidays
+    holidayInput.addEventListener('input', function() {
+        const holidays = parseInt(this.value) || 0;
+        configureContainer.style.display = holidays > 0 ? 'block' : 'none';
+        if (holidays === 0) {
+            dailyConfig.style.display = 'none';
+            dailyClassesData.value = '';
+        }
+    });
+
+    // Toggle configuration panel
+    configureBtn.addEventListener('click', function() {
+        dailyConfig.style.display = dailyConfig.style.display === 'none' ? 'block' : 'none';
+        if (dailyConfig.style.display === 'block') {
+            generateDayInputs();
+        }
+    });
+
+    // Handle "All Classes Skipped" button
+    selectAllBtn.addEventListener('click', function() {
+        const maxClasses = parseInt(defaultClassesInput.value) || 7;
+        const selects = dayInputs.querySelectorAll('select');
+        selects.forEach(select => {
+            select.value = maxClasses;
+        });
+        updateDailyClassesData();
+    });
+
+    // Handle "No Classes Skipped" button
+    clearAllBtn.addEventListener('click', function() {
+        const selects = dayInputs.querySelectorAll('select');
+        selects.forEach(select => {
+            select.value = 0;
+        });
+        updateDailyClassesData();
+    });
+
+    // Handle "Reset" button
+    defaultAllBtn.addEventListener('click', function() {
+        generateDayInputs();
+    });
+
+    // Generate inputs for each holiday
+    function generateDayInputs() {
+        const holidays = parseInt(holidayInput.value) || 0;
+        const maxClasses = parseInt(defaultClassesInput.value) || 7;
+        dayInputs.innerHTML = '';
+        
+        for (let i = 1; i <= holidays; i++) {
+            const col = document.createElement('div');
+            col.className = 'col-md-3 mb-2';
+            
+            let options = '';
+            for(let j = 0; j <= maxClasses; j++) {
+                const selected = j === maxClasses ? 'selected' : ''; // Default to all classes skipped
+                options += `<option value="${j}" ${selected}>${j} class${j !== 1 ? 'es' : ''} skipped</option>`;
+            }
+            
+            col.innerHTML = `
+                <label for="day${i}" class="form-label">Day ${i}:</label>
+                <select class="form-select" id="day${i}" onchange="updateDailyClassesData()">
+                    ${options}
+                </select>
+            `;
+            dayInputs.appendChild(col);
+        }
+        updateDailyClassesData();
+    }
+    
+    // Update hidden input with JSON data
+    window.updateDailyClassesData = function() {
+        const dailyClasses = {};
+        const selects = dayInputs.querySelectorAll('select');
+        selects.forEach((select, index) => {
+            dailyClasses[`day${index + 1}`] = parseInt(select.value) || 0;
+        });
+        dailyClassesData.value = JSON.stringify(dailyClasses);
+    };
+});
+</script>
+{% endblock %}

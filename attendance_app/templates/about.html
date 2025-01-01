@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+<!-- About Page -->
+{% block title %}
+Understanding the Math Behind the Results
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-info mb-4">Understanding the Math Behind the Results</h2>
+    
+    <!-- Introduction Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Why Understanding the Math Matters</h4>
+        <p>
+            This page explains the mathematical concepts and formulas used to calculate the results displayed on the main page. By understanding the calculations, you can gain deeper insights into how we analyze the data and how the conclusions are derived.
+        </p>
+    </section>
+
+    <!-- Decreased Percentage Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Decreased Percentage Calculation</h4>
+        <p>
+            The decreased percentage is calculated using the formula:
+        </p>
+        <pre><code>
+            Decreased Percentage = ((Previous Value - Current Value) / Previous Value) * 100
+        </code></pre>
+        <p>
+            This formula calculates how much a value has decreased relative to its previous value. The result is expressed as a percentage to make it easy to interpret the change.
+        </p>
+        <p>
+            For example, if the previous value was 80 and the current value is 60, the decreased percentage would be:
+        </p>
+        <pre><code>
+            Decreased Percentage = ((80 - 60) / 80) * 100 = 25%
+        </code></pre>
+    </section>
+
+    <!-- Decrement Per Day Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Decrement Per Day Calculation</h4>
+        <p>
+            The decrement per day is calculated by measuring the difference in values between consecutive days. The formula is:
+        </p>
+        <pre><code>
+            Decrement Per Day = Current Day Value - Previous Day Value
+        </code></pre>
+        <p>
+            This formula gives us the change in value for each day. It helps in tracking the daily fluctuations in the data.
+        </p>
+        <p>
+            For example, if the value on day 1 is 100 and on day 2 it is 80, the decrement per day would be:
+        </p>
+        <pre><code>
+            Decrement Per Day = 80 - 100 = -20
+        </code></pre>
+    </section>
+
+    <!-- Formula Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">The Formulas at a Glance</h4>
+        <p>
+            To summarize, here are the formulas used in the analysis:
+        </p>
+        <ul>
+            <li><strong>Decreased Percentage:</strong> 
+                <pre><code>((Previous Value - Current Value) / Previous Value) * 100</code></pre>
+            </li>
+            <li><strong>Decrement Per Day:</strong> 
+                <pre><code>Current Day Value - Previous Day Value</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Example Calculations Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Example Calculation</h4>
+        <p>
+            Let's go through an example where we calculate both the decreased percentage and decrement per day:
+        </p>
+        <div class="mb-4">
+            <h5>Example 1:</h5>
+            <ul>
+                <li>Day 1 Value: 100</li>
+                <li>Day 2 Value: 80</li>
+            </ul>
+            <h6>Decreased Percentage:</h6>
+            <pre><code>((100 - 80) / 100) * 100 = 20%</code></pre>
+            <h6>Decrement Per Day:</h6>
+            <pre><code>80 - 100 = -20</code></pre>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section>
+        <h4 class="text-primary">Conclusion</h4>
+        <p>
+            Understanding the math behind the results helps you interpret the data more accurately. The decreased percentage gives you an idea of the magnitude of change, while the decrement per day helps you track daily fluctuations. With this knowledge, you can make more informed decisions based on the analysis.
+        </p>
+    </section>
+</div>
+{% endblock %}

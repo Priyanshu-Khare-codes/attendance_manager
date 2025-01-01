@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+<!-- Developer's Page -->
+{% block title %}
+About Me
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-info mb-4">Developers</h2>
+    
+    <!-- Introduction Section -->
+    <section class="row mb-5">
+        <div class="col-md-6">
+            <img src="{% static 'dp1.jpeg' %}" alt="Your Image" class="img-fluid rounded-circle mb-4">
+        </div>
+        <div class="col-md-6">
+            <h4 class="text-primary">Hello, I'm Priyanshu Khare</h4>
+            <p>
+                I'm a passionate Computer Science Engineering student specializing in AI and ML, with a focus on data science, machine learning models, and deep learning. I have experience working on a wide range of projects that utilize modern technologies, and I am always looking for new challenges to solve.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Skills</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Machine Learning</li>
+            <li class="list-group-item">Data Science</li>
+            <li class="list-group-item">Deep Learning</li>
+            <li class="list-group-item">Python Programming</li>
+            <li class="list-group-item">Statistical Analysis</li>
+            <li class="list-group-item">Data Visualization</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-5">
+        <h4 class="text-primary">Projects</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Chatbot using Google Gemini Pro API and Streamlit</li>
+            <li class="list-group-item">Retrieval-Augmented Generation using LangChain</li>
+            <li class="list-group-item">Movie Recommendation System</li>
+            <li class="list-group-item">Convolutional Neural Network for Image Classification</li>
+            <li class="list-group-item">Transfer Learning with ResNet for Object Recognition</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h4 class="text-primary">Contact</h4>
+        <p>If you would like to collaborate or get in touch, feel free to reach out to me via LinkedIn or GitHub.</p>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="https://www.linkedin.com/in/priyanshu-khare-b776a630a/" target="_blank">LinkedIn</a></li>
+            <li class="list-group-item"><a href="https://github.com/priyanshu-khare-codes" target="_blank">GitHub</a></li>
+        </ul>
+    </section>
+</div>
+{% endblock %}
