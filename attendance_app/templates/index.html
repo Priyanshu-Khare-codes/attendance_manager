@@ -1,109 +1,8 @@
 {% extends "layout.html" %}
 
-{% comment "" %}
-{% block title %}
-Attendance Manager
-{% endblock %}
-
-{% block content %}
-<h1 class="text-center mt-2">Welcome to LNCT Attendance Manager!</h1>
-<h4 class="text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
-
-<form method="POST" class="form text-center">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button class="btn btn-primary" type="submit">Analyse</button>
-</form> 
-{% endblock %} {% endcomment %}
-
-
-
-{% comment %} ------------------------------------------------------------- {% endcomment %}
-
-{% comment %} {% block title %}
-Attendance Manager
-{% endblock %}
-
-{% block content %}
-<div class="container mt-5">
-    <h1 class="display-4 text-primary text-center mb-3">Welcome to LNCT Attendance Manager!</h1>
-    <h4 class="text-muted text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
-
-    <form method="POST" class="form text-center">
-        {% csrf_token %}
-        
-        <!-- Create a row with smaller column sizes -->
-        <div class="row justify-content-center">
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="total_classes" class="form-label fs-6">Total No. of Classes</label>
-                    {{ form.total_classes }}
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="attended_classes" class="form-label fs-6">Present Classes</label>
-                    {{ form.attended_classes }}
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="holiday_classes" class="form-label fs-6">No. of Holidays</label>
-                    {{ form.holiday_classes }}
-                </div>
-            </div>
-        </div>
-
-        <!-- Centered submit button with Bootstrap class -->
-        <div class="text-center">
-            <button class="btn btn-warning btn-sm" type="submit">Analyse</button>
-        </div>
-    </form>
-</div>
-{% endblock %}   {% endcomment %}
-
-{% comment %} -------------------------------------------------------------------------- {% endcomment %}
-
-{% comment %} {% block title %}
-Attendance Manager
-{% endblock %}
-
-{% block content %}
-<div class="container mt-5">
-    <h1 class="display-4 text-primary text-center mb-3">Welcome to LNCT Attendance Manager!</h1>
-    <h4 class="text-muted text-center mb-4">Calculate and Analyse your Attendance for future Holiday Planning.</h4>
-
-    <form method="POST" class="form text-center" id="attendanceForm">
-        {% csrf_token %}
-
-        <div class="row justify-content-center">
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="total_classes" class="form-label fs-6">Total No. of Classes</label>
-                    {{ form.total_classes }}
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="attended_classes" class="form-label fs-6">Present Classes</label>
-                    {{ form.attended_classes }}
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="mb-3">
-                    <label for="holiday_classes" class="form-label fs-6">No. of Holidays</label>
-                    {{ form.holiday_classes }}
-                </div>
-            </div>
-        </div>
-        <button class="btn btn-warning btn-sm" type="submit">Analyse</button>
-    </form>
-</div>
-{% endblock %} {% endcomment %}
-
-
-
 {% block title %} Attendance Manager {% endblock %}
+
+{% block navHome %}active{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -162,7 +61,7 @@ Attendance Manager
 
         {{ form.daily_classes }}
         
-        <button class="btn btn-warning btn-sm mt-3 mb-5" type="submit">Analyse</button>
+        <button class="btn btn-warning btn-sm mt-1 mb-5" type="submit">Analyse</button>
     </form>
 
     {% if form.errors %}

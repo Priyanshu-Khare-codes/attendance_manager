@@ -4,59 +4,149 @@
 
 <!-- Developer's Page -->
 {% block title %}
-About Me
+Developers
 {% endblock %}
 
+{% block navDevelopers %}active{% endblock %}
+
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center text-info mb-4">Developers</h2>
-    
-    <!-- Introduction Section -->
-    <section class="row mb-5">
-        <div class="col-md-6">
-            <img src="{% static 'dp1.jpeg' %}" alt="Your Image" class="img-fluid rounded-circle mb-4">
+<div class="container py-5">
+    <!-- Hero Section with animated text -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <div class="position-relative">
+          <h1 class="display-3 fw-bold mb-2" style="background: linear-gradient(45deg, #6c63ff, #ff5733); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Priyanshu Khare</h1>
+          <h2 class="h3 text-muted mb-4">Backend Developer & AI/ML Engineer</h2>
+          <div class="d-flex justify-content-center gap-3 mb-4">
+            <a href="https://github.com/priyanshu-khare-codes" class="btn btn-outline-dark rounded-pill px-4">GitHub</a>
+            <a href="https://www.linkedin.com/in/priyanshu-khare-b776a630a/" class="btn btn-outline-primary rounded-pill px-4">LinkedIn</a>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Skills Section with modern cards -->
+    <section class="mb-5">
+      <h2 class="h2 mb-4 text-center">Technical Expertise</h2>
+      <div class="row g-4">
+        <!-- Backend Development -->
         <div class="col-md-6">
-            <h4 class="text-primary">Hello, I'm Priyanshu Khare</h4>
-            <p>
-                I'm a passionate Computer Science Engineering student specializing in AI and ML, with a focus on data science, machine learning models, and deep learning. I have experience working on a wide range of projects that utilize modern technologies, and I am always looking for new challenges to solve.
-            </p>
+          <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow transition-all" 
+               style="background: linear-gradient(145deg, #ffffff, #f3f3f3);">
+            <div class="card-body p-4">
+              <h3 class="h4 mb-4" style="color: #6c63ff;">Backend Development</h3>
+              <div class="mb-4">
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="h6 mb-0">Python</span>
+                    <span class="text-muted small">Expert</span>
+                  </div>
+                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
+                    <div class="progress-bar rounded-pill" role="progressbar" 
+                         style="width: 90%; background-color: #6c63ff;" 
+                         aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="h6 mb-0">Django</span>
+                    <span class="text-muted small">Advanced</span>
+                  </div>
+                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
+                    <div class="progress-bar rounded-pill" role="progressbar" 
+                         style="width: 85%; background-color: #6c63ff;" 
+                         aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- AI/ML -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow transition-all" 
+               style="background: linear-gradient(145deg, #ffffff, #f3f3f3);">
+            <div class="card-body p-4">
+              <h3 class="h4 mb-4" style="color: #ff5733;">AI/ML Development</h3>
+              <div class="mb-4">
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="h6 mb-0">PyTorch</span>
+                    <span class="text-muted small">Advanced</span>
+                  </div>
+                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
+                    <div class="progress-bar rounded-pill" role="progressbar" 
+                         style="width: 80%; background-color: #ff5733;" 
+                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="h6 mb-0">TensorFlow</span>
+                    <span class="text-muted small">Advanced</span>
+                  </div>
+                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
+                    <div class="progress-bar rounded-pill" role="progressbar" 
+                         style="width: 75%; background-color: #ff5733;" 
+                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Projects Section with modern cards -->
     <section class="mb-5">
-        <h4 class="text-primary">Skills</h4>
-        <ul class="list-group">
-            <li class="list-group-item">Machine Learning</li>
-            <li class="list-group-item">Data Science</li>
-            <li class="list-group-item">Deep Learning</li>
-            <li class="list-group-item">Python Programming</li>
-            <li class="list-group-item">Statistical Analysis</li>
-            <li class="list-group-item">Data Visualization</li>
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="mb-5">
-        <h4 class="text-primary">Projects</h4>
-        <ul class="list-group">
-            <li class="list-group-item">Chatbot using Google Gemini Pro API and Streamlit</li>
-            <li class="list-group-item">Retrieval-Augmented Generation using LangChain</li>
-            <li class="list-group-item">Movie Recommendation System</li>
-            <li class="list-group-item">Convolutional Neural Network for Image Classification</li>
-            <li class="list-group-item">Transfer Learning with ResNet for Object Recognition</li>
-        </ul>
+      <h2 class="h2 mb-4 text-center">Featured Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-6 mx-auto">
+          <div class="card border-0 rounded-4 shadow-sm hover-shadow transition-all">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h3 class="h5 mb-0">Attendance Manager</h3>
+                <span class="badge rounded-pill" style="background-color: #6c63ff;">Featured</span>
+              </div>
+              <p class="text-muted mb-3">A modern web application built with Django for efficient attendance tracking and management.</p>
+              <div class="mb-3">
+                <span class="badge rounded-pill text-dark bg-light border me-2">Python</span>
+                <span class="badge rounded-pill text-dark bg-light border me-2">Django</span>
+                <span class="badge rounded-pill text-dark bg-light border">Bootstrap</span>
+              </div>
+              <a href="#" class="btn btn-sm rounded-pill px-4" style="background-color: #6c63ff; color: white;">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section>
-        <h4 class="text-primary">Contact</h4>
-        <p>If you would like to collaborate or get in touch, feel free to reach out to me via LinkedIn or GitHub.</p>
-        <ul class="list-group">
-            <li class="list-group-item"><a href="https://www.linkedin.com/in/priyanshu-khare-b776a630a/" target="_blank">LinkedIn</a></li>
-            <li class="list-group-item"><a href="https://github.com/priyanshu-khare-codes" target="_blank">GitHub</a></li>
-        </ul>
+    <section class="text-center py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="h2 mb-4">Let's Connect</h2>
+          <p class="lead text-muted mb-5">Interested in collaboration or have a project in mind? Feel free to reach out!</p>
+          <a href="mailto:your.email@example.com" class="btn btn-lg rounded-pill px-5" 
+             style="background: linear-gradient(45deg, #6c63ff, #ff5733); color: white;">
+            Get in Touch
+          </a>
+        </div>
+      </div>
     </section>
-</div>
+  </div>
+
+  <style>
+    .hover-shadow {
+      transition: all 0.3s ease;
+    }
+    .hover-shadow:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+  </style>
 {% endblock %}

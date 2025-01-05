@@ -1,31 +1,26 @@
 from django import forms
 
-# class AttendanceForm(forms.Form):
-#     total_classes = forms.IntegerField(label="Total No. of Classes", min_value=1, widget=forms.NumberInput(attrs={'class': 'form-control p-2'}))
-#     attended_classes = forms.IntegerField(label="Present Classes", min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control p-2'}))
-#     holiday_classes = forms.IntegerField(label="No. of Holidays", min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control p-2'}))
-
 class AttendanceForm(forms.Form):
     total_classes = forms.IntegerField(
         label="Total No. of Classes", 
         min_value=1, 
-        widget=forms.NumberInput(attrs={'class': 'form-control p-2'})
+        widget=forms.NumberInput(attrs={'class': 'form-control p-2 text-center'})
     )
     attended_classes = forms.IntegerField(
         label="Present Classes", 
         min_value=0, 
-        widget=forms.NumberInput(attrs={'class': 'form-control p-2'})
+        widget=forms.NumberInput(attrs={'class': 'form-control p-2 text-center'})
     )
     holiday_classes = forms.IntegerField(
         label="No. of Holidays", 
         min_value=0, 
-        widget=forms.NumberInput(attrs={'class': 'form-control p-2', 'id': 'holidayInput'})
+        widget=forms.NumberInput(attrs={'class': 'form-control p-2 text-center', 'id': 'holidayInput'})
     )
     classes_per_day = forms.IntegerField(
         label="Classes Per Day",
         initial=7,
         min_value=1,
-        widget=forms.NumberInput(attrs={'class': 'form-control p-2', 'id': 'classesPerDay'})
+        widget=forms.NumberInput(attrs={'class': 'form-control p-2 text-center', 'id': 'classesPerDay'})
     )
     daily_classes = forms.CharField(
         required=False, 
