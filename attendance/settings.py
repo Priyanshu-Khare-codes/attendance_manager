@@ -131,5 +131,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+# Use file-based session storage
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
-SESSION_FILE_PATH = '/tmp/django_sessions'  # Use the writable /tmp directory on Vercel
+
+# Set a custom directory for storing session files
+SESSION_FILE_PATH = os.path.join(BASE_DIR, 'sessions')
+
+# Ensure that the session files directory exists locally
+if not os.path.exists(SESSION_FILE_PATH):
+    os.makedirs(SESSION_FILE_PATH)
