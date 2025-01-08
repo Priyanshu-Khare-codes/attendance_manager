@@ -49,6 +49,18 @@
         <!-- Daily Configuration Form -->
         <div id="dailyConfig" style="display: none;" class="mb-4">
             <div class="mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <label for="quickSelect" class="form-label">Quick Select: Set Skipped Classes for All Days</label>
+                        <select class="form-select" id="quickSelect">
+                            <option value="">Choose number of classes to skip...</option>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-primary" id="selectAll">All Classes Skipped</button>
                     <button type="button" class="btn btn-sm btn-outline-danger" id="clearAll">No Classes Skipped</button>
@@ -87,11 +99,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectAllBtn = document.getElementById('selectAll');
     const clearAllBtn = document.getElementById('clearAll');
     const defaultAllBtn = document.getElementById('defaultAll');
+    const quickSelect = document.getElementById('quickSelect');
 
     // Listen for changes in classes per day
     defaultClassesInput.addEventListener('change', function() {
         if (dailyConfig.style.display === 'block') {
             generateDayInputs();
+            updateQuickSelectOptions();
         }
     });
 
@@ -110,7 +124,32 @@ document.addEventListener('DOMContentLoaded', function() {
         dailyConfig.style.display = dailyConfig.style.display === 'none' ? 'block' : 'none';
         if (dailyConfig.style.display === 'block') {
             generateDayInputs();
+            updateQuickSelectOptions();
         }
+    });
+
+    // Update quick select options based on max classes
+    function updateQuickSelectOptions() {
+        const maxClasses = parseInt(defaultClassesInput.value) || 7;
+        quickSelect.innerHTML = '<option value="">Choose number of classes to skip...</option>';
+        for (let i = 0; i <= maxClasses; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `${i} class${i !== 1 ? 'es' : ''} skipped`;
+            quickSelect.appendChild(option);
+        }
+    }
+
+    // Handle quick select changes
+    quickSelect.addEventListener('change', function() {
+        if (this.value === "") return;
+        const skippedClasses = parseInt(this.value);
+        const selects = dayInputs.querySelectorAll('select');
+        selects.forEach(select => {
+            select.value = skippedClasses;
+        });
+        updateDailyClassesData();
+        this.value = ""; // Reset the dropdown after applying
     });
 
     // Handle "All Classes Skipped" button
@@ -149,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             let options = '';
             for(let j = 0; j <= maxClasses; j++) {
-                const selected = j === maxClasses ? 'selected' : ''; // Default to all classes skipped
+                const selected = j === maxClasses ? 'selected' : '';
                 options += `<option value="${j}" ${selected}>${j} class${j !== 1 ? 'es' : ''} skipped</option>`;
             }
             
