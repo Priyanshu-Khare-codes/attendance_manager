@@ -2,7 +2,6 @@
 
 {% load static %}
 
-<!-- Developer's Page -->
 {% block title %}
 Developers
 {% endblock %}
@@ -10,143 +9,197 @@ Developers
 {% block navDevelopers %}active{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <!-- Hero Section with animated text -->
-    <div class="row mb-5">
-      <div class="col-12 text-center">
-        <div class="position-relative">
-          <h1 class="display-3 fw-bold mb-2" style="background: linear-gradient(45deg, #6c63ff, #ff5733); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Priyanshu Khare</h1>
-          <h2 class="h3 text-muted mb-4">Backend Developer & AI/ML Engineer</h2>
-          <div class="d-flex justify-content-center gap-3 mb-4">
-            <a href="https://github.com/priyanshu-khare-codes" class="btn btn-outline-dark rounded-pill px-4">GitHub</a>
-            <a href="https://www.linkedin.com/in/priyanshu-khare-b776a630a/" class="btn btn-outline-primary rounded-pill px-4">LinkedIn</a>
-          </div>
+<div class="container-fluid px-4 py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <!-- Developers Section -->
+    <div class="row justify-content-center g-4">
+        <!-- Priyanshu's Profile -->
+        <div class="col-md-5">
+            <div class="card border-0 rounded-4 shadow-lg hover-card p-3" 
+                 style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="avatar-placeholder mb-4">
+                            <div class="rounded-circle bg-gradient d-inline-flex align-items-center justify-content-center" 
+                                 style="width: 120px; height: 120px; background: linear-gradient(45deg, #6c63ff, #ff5733);">
+                                <span class="display-4 text-white">PK</span>
+                            </div>
+                        </div>
+                        <h1 class="display-6 fw-bold mb-2">
+                            <span class="text-gradient">Priyanshu Khare</span>
+                        </h1>
+                        <h2 class="h5 text-muted mb-4">Software Developer</h2>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <a href="https://github.com/priyanshu-khare-codes" 
+                               class="btn btn-dark btn-glow rounded-pill px-4 py-2">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/priyanshu-khare-b776a630a/" 
+                               class="btn btn-custom-blue btn-glow rounded-pill px-4 py-2">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="skills-section">
+                        <h3 class="h5 fw-bold mb-3">
+                            <i class="fas fa-code me-2 text-primary"></i>
+                            Development Skills
+                        </h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Django</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- Anurag's Profile -->
+        <div class="col-md-5">
+            <div class="card border-0 rounded-4 shadow-lg hover-card p-3" 
+                 style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="avatar-placeholder mb-4">
+                            <div class="rounded-circle bg-gradient d-inline-flex align-items-center justify-content-center" 
+                                 style="width: 120px; height: 120px; background: linear-gradient(45deg, #6c63ff, #ff5733);">
+                                <span class="display-4 text-white">AJ</span>
+                            </div>
+                        </div>
+                        <h1 class="display-6 fw-bold mb-2">
+                            <span class="text-gradient">Anurag Jaiswal</span>
+                        </h1>
+                        <h2 class="h5 text-muted mb-4">Software Developer</h2>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <a href="https://github.com/AnuragAJ25" 
+                               class="btn btn-dark btn-glow rounded-pill px-4 py-2">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/anurag-jaiswal-ab6074294" 
+                               class="btn btn-custom-blue btn-glow rounded-pill px-4 py-2">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="skills-section">
+                        <h3 class="h5 fw-bold mb-3">
+                            <i class="fas fa-code me-2 text-primary"></i>
+                            Development Skills
+                        </h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">HTML</span>
+                            <span class="skill-badge">CSS</span>
+                            <span class="skill-badge">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Skills Section with modern cards -->
-    <section class="mb-5">
-      <h2 class="h2 mb-4 text-center">Technical Expertise</h2>
-      <div class="row g-4">
-        <!-- Backend Development -->
-        <div class="col-md-6">
-          <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow transition-all" 
-               style="background: linear-gradient(145deg, #ffffff, #f3f3f3);">
-            <div class="card-body p-4">
-              <h3 class="h4 mb-4" style="color: #6c63ff;">Backend Development</h3>
-              <div class="mb-4">
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="h6 mb-0">Python</span>
-                    <span class="text-muted small">Expert</span>
-                  </div>
-                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
-                    <div class="progress-bar rounded-pill" role="progressbar" 
-                         style="width: 90%; background-color: #6c63ff;" 
-                         aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="h6 mb-0">Django</span>
-                    <span class="text-muted small">Advanced</span>
-                  </div>
-                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
-                    <div class="progress-bar rounded-pill" role="progressbar" 
-                         style="width: 85%; background-color: #6c63ff;" 
-                         aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- AI/ML -->
-        <div class="col-md-6">
-          <div class="card h-100 border-0 rounded-4 shadow-sm hover-shadow transition-all" 
-               style="background: linear-gradient(145deg, #ffffff, #f3f3f3);">
-            <div class="card-body p-4">
-              <h3 class="h4 mb-4" style="color: #ff5733;">AI/ML Development</h3>
-              <div class="mb-4">
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="h6 mb-0">PyTorch</span>
-                    <span class="text-muted small">Advanced</span>
-                  </div>
-                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
-                    <div class="progress-bar rounded-pill" role="progressbar" 
-                         style="width: 80%; background-color: #ff5733;" 
-                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="h6 mb-0">TensorFlow</span>
-                    <span class="text-muted small">Advanced</span>
-                  </div>
-                  <div class="progress" style="height: 8px; background-color: #e9ecef;">
-                    <div class="progress-bar rounded-pill" role="progressbar" 
-                         style="width: 75%; background-color: #ff5733;" 
-                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section with modern cards -->
-    <section class="mb-5">
-      <h2 class="h2 mb-4 text-center">Featured Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-6 mx-auto">
-          <div class="card border-0 rounded-4 shadow-sm hover-shadow transition-all">
-            <div class="card-body p-4">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3 class="h5 mb-0">Attendance Planner</h3>
-                <span class="badge rounded-pill" style="background-color: #6c63ff;">Featured</span>
-              </div>
-              <p class="text-muted mb-3">A modern web application built with Django for efficient attendance tracking and management.</p>
-              <div class="mb-3">
-                <span class="badge rounded-pill text-dark bg-light border me-2">Python</span>
-                <span class="badge rounded-pill text-dark bg-light border me-2">Django</span>
-                <span class="badge rounded-pill text-dark bg-light border">Bootstrap</span>
-              </div>
-              <a href="#" class="btn btn-sm rounded-pill px-4" style="background-color: #6c63ff; color: white;">View Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="text-center py-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <h2 class="h2 mb-4">Let's Connect</h2>
-          <p class="lead text-muted mb-5">Interested in collaboration or have a project in mind? Feel free to reach out!</p>
-          <a href="mailto:your.email@example.com" class="btn btn-lg rounded-pill px-5" 
-             style="background: linear-gradient(45deg, #6c63ff, #ff5733); color: white;">
-            Get in Touch
-          </a>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-0 rounded-4 shadow-lg p-4" 
+                     style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+                    <div class="card-body">
+                        <h2 class="h2 mb-4 fw-bold">Let's Connect</h2>
+                        <p class="lead text-muted mb-5">Interested in collaboration or have a project in mind? Feel free to reach out!</p>
+                        <a href="mailto:your.email@example.com" 
+                           class="btn btn-lg btn-gradient rounded-pill px-5 py-3">
+                            <i class="fas fa-envelope me-2"></i>Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-  </div>
+</div>
 
-  <style>
-    .hover-shadow {
-      transition: all 0.3s ease;
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.text-gradient {
+    background: linear-gradient(45deg, #6c63ff, #ff5733);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2)!important;
+}
+
+.skill-badge {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    background: linear-gradient(45deg, #6c63ff, #ff5733);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+.btn-gradient {
+    background: linear-gradient(45deg, #6c63ff, #ff5733);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg, #ff5733, #6c63ff);
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.btn-glow {
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #6c63ff, #ff5733);
+}
+
+.avatar-placeholder {
+    transition: all 0.3s ease;
+}
+
+.avatar-placeholder:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .col-md-5 {
+        margin-bottom: 2rem;
     }
-    .hover-shadow:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-    .transition-all {
-      transition: all 0.3s ease;
-    }
-  </style>
+}
+</style>
 {% endblock %}
